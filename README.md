@@ -4,6 +4,7 @@ APMinstaller v.1.0 with ROCKY Linux
 쉬운 업데이트 지원. (공식+인기 저장소를 사용하여 dnf update 만으로 업데이트 완료)
 사용자 생성,삭제,백업 스크립트 사용으로 시스템 계정, 디비 계정 자동 생성 지원
 Let's Encrypt - 무료 SSL 인증서 발급 및 갱신 지원
+멀티 PHP 지원 - 7.2, 7.3, 7.4, 8.0, 8.1
 모니터링 툴 - cockpit 지원
 </pre>
 

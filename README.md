@@ -25,7 +25,7 @@ yum -y install git \
 AAI 다운로드 설치 방법
 
 1. SSH와 SFTP 는 필히 root 권한으로 접속 합니다.
-2. ROCKYM-main 압축 파일을 다운로드 받으시고 압축을 해제 후 ROCKY 폴더로 변경 후 자신의 서버 /root 폴더에 업로드한다.
+2. ROCKYM-main 압축 파일을 다운로드 받으시고 압축을 해제 후 ROCKYM 폴더로 변경 후 자신의 서버 /root 폴더에 업로드한다.
 3. Shell(터미널)에서 /root/ROCKYM 폴더내의 install.sh 파일의 퍼미션을 chmod 700 install.sh 로 해당 파일의 퍼미션을 700 으로 수정한다.
 4. ./install.sh 입력후 엔터를 치고 설치를 진행 하시면 됩니다.
 

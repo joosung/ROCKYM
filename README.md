@@ -16,7 +16,7 @@ SSH와 SFTP 는 필히 root 권한으로 접속 합니다.
 yum -y install git \
 && cd /root/ \
 && git clone https://github.com/joosung/ROCKYM.git \
-&& cd ROCKY \
+&& cd ROCKYM \
 && sh install.sh
 </pre>
 
@@ -25,7 +25,7 @@ AAI 다운로드 설치 방법
 
 1. SSH와 SFTP 는 필히 root 권한으로 접속 합니다.
 2. ROCKYM-main 압축 파일을 다운로드 받으시고 압축을 해제 후 ROCKY 폴더로 변경 후 자신의 서버 /root 폴더에 업로드한다.
-3. Shell(터미널)에서 /root/ROCKY 폴더내의 install.sh 파일의 퍼미션을 chmod 700 install.sh 로 해당 파일의 퍼미션을 700 으로 수정한다.
+3. Shell(터미널)에서 /root/ROCKYM 폴더내의 install.sh 파일의 퍼미션을 chmod 700 install.sh 로 해당 파일의 퍼미션을 700 으로 수정한다.
 4. ./install.sh 입력후 엔터를 치고 설치를 진행 하시면 됩니다.
 
 
@@ -42,12 +42,12 @@ AAI  주요 명령
 4. 스푸핑 에 관련된 메일을 받고 싶을땐 /etc/sysconfig/arpwatch 파일을 열어서 아래와 같이 수정 하세요.
    OPTIonS="-u pcap -e '메일주소' -s '보내는이(Arpwatch)' -n 'ㅣ자신의IP/24'"
 
-5. 설지 작업이 모두 끝나면 sh /root/ROCKY/chkrootkit/chkrootkit 그리고 clamscan -r /home --move=/virus 를 각각 실행해서 바이러스와 멀웨어 등이 없는지 확인 합니다. 
+5. 설지 작업이 모두 끝나면 sh /root/ROCKYM/chkrootkit/chkrootkit 그리고 clamscan -r /home --move=/virus 를 각각 실행해서 바이러스와 멀웨어 등이 없는지 확인 합니다. 
    테스트 용 바이러스 파일이 생성되므로 있다면 삭제 해 줍니다.
 
 6. 사용중인 php 버전을 다른 버전으로 교체 할 경우에는 /etc/httpd/conf.d/계정명.conf 파일을 에디터로 열고 
    SetHandler "proxy:fcgi://127.0.0.1:9000" 이부분을 찾아서 9000 부분의 뒷자리 두 숫자를 수정해 주시면 됩니다.
-   예 : PHP 8.0 사용시 9080, PHP 7.4 사용시 9074, PHP 8.1 사용시 9081 등으로 수정 후 ROCKY 폴더내의 sh restart.sh 를 진행해 주시면 됩니다.  
+   예 : PHP 8.0 사용시 9080, PHP 7.4 사용시 9074, PHP 8.1 사용시 9081 등으로 수정 후 ROCKYM 폴더내의 sh restart.sh 를 진행해 주시면 됩니다.  
 
 7. cockpit 지원으로 인하여 port 9090 를 서버 방화벽에서 열어 주셔야 합니다.
 

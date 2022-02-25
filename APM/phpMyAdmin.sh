@@ -16,7 +16,7 @@
 #           phpMyAdmin install           #
 #                                        #
 ########################################## 
-cd /root/ROCKY/APM
+cd /root/ROCKYM/APM
 
 wget https://files.phpmyadmin.net/phpMyAdmin/5.1.3/phpMyAdmin-5.1.3-all-languages.tar.gz
 
@@ -36,9 +36,9 @@ mv phpMyAdmin.conf /etc/httpd/conf.d/
 mkdir /usr/share/phpMyAdmin/tmp
 chmod 777 /usr/share/phpMyAdmin/tmp
 
-sh /root/ROCKY/restart.sh
+sh /root/ROCKYM/restart.sh
 
-cd /root/ROCKY/
+cd /root/ROCKYM/
 
 echo ""
 echo ""

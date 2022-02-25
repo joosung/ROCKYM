@@ -37,7 +37,7 @@ net-snmp-devel libevent-devel libtool-ltdl-devel postgresql-devel bison make pkg
 
 sudo dnf -y update
 
-cd /root/ROCKY/APM
+cd /root/ROCKYM/APM
 
 ##########################################
 #                                        #
@@ -94,8 +94,8 @@ sed -i 's/UserDir disabled/#UserDir disabled/' /etc/httpd/conf.d/userdir.conf
 sed -i 's/#UserDir public_html/UserDir public_html/' /etc/httpd/conf.d/userdir.conf
 sed -i 's/Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec/Options MultiViews SymLinksIfOwnerMatch IncludesNoExec/' /etc/httpd/conf.d/userdir.conf
 
-cp /root/ROCKY/APM/index.html /var/www/html/
-#cp -f /root/ROCKY/APM/index.html /usr/share/httpd/noindex/
+cp /root/ROCKYM/APM/index.html /var/www/html/
+#cp -f /root/ROCKYM/APM/index.html /usr/share/httpd/noindex/
 
 echo "<VirtualHost *:80>
   DocumentRoot /var/www/html
@@ -310,15 +310,15 @@ mkdir /etc/skel/public_html
 
 chmod 707 /etc/skel/public_html
 
-chmod 700 /root/ROCKY/adduser.sh
+chmod 700 /root/ROCKYM/adduser.sh
 
-chmod 700 /root/ROCKY/deluser.sh
+chmod 700 /root/ROCKYM/deluser.sh
 
-chmod 700 /root/ROCKY/clamav.sh
+chmod 700 /root/ROCKYM/clamav.sh
 
-chmod 700 /root/ROCKY/restart.sh
+chmod 700 /root/ROCKYM/restart.sh
 
-cp /root/ROCKY/APM/skel/index.html /etc/skel/public_html/
+cp /root/ROCKYM/APM/skel/index.html /etc/skel/public_html/
 
 rm -rf /etc/httpd/conf.d/php72-php.conf
 rm -rf /etc/httpd/conf.d/php73-php.conf
@@ -365,7 +365,7 @@ sudo mariadb-secure-installation
 #                                        #
 ##########################################
 
-cd /root/ROCKY/
+cd /root/ROCKYM/
 
 #chkrootkit 설치
 tar xvfz chkrootkit.tar.gz
@@ -376,7 +376,7 @@ cd chkrootkit
 
 make sense
 
-rm -rf /root/ROCKY/chkrootkit.tar.gz
+rm -rf /root/ROCKYM/chkrootkit.tar.gz
 
 #mod_security fail2ban.noarch arpwatch 설치
 dnf -y install  mod_security mod_security_crs fail2ban arpwatch
@@ -448,7 +448,7 @@ systemctl stop clamd.service
 
 mkdir /virus
 mkdir /backup
-mkdir /root/ROCKY/php
+mkdir /root/ROCKYM/php
 
 #memcache 설치
 sudo dnf install -y memcached libmemcached
@@ -495,33 +495,33 @@ rm -f /tmp/httpd.conf_tempfile
 #                                        #
 ##########################################
 
-mv /root/ROCKY/APM/etc/cron.daily/backup /etc/cron.daily/
-mv /root/ROCKY/APM/etc/cron.daily/check_chkrootkit /etc/cron.daily/
+mv /root/ROCKYM/APM/etc/cron.daily/backup /etc/cron.daily/
+mv /root/ROCKYM/APM/etc/cron.daily/check_chkrootkit /etc/cron.daily/
 
 chmod 700 /etc/cron.daily/backup
 chmod 700 /etc/cron.daily/check_chkrootkit
 
 
 echo "0 0,12 * * * root python -c 'import random; import time; time.sleep(random.random() * 3600)' && /usr/local/bin/certbot-auto renew" | sudo tee -a /etc/crontab > /dev/null
-echo "01 01 * * 7 /root/ROCKY/clamav.sh" >> /etc/crontab
+echo "01 01 * * 7 /root/ROCKYM/clamav.sh" >> /etc/crontab
 
 #openssl 로 디피-헬만 파라미터(dhparam) 키 만들기 둘중 하나 선택
 #openssl dhparam -out /etc/ssl/certs/dhparam.pem 4096
 openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 
 #중요 폴더 및 파일 링크
-ln -s /etc/httpd/conf.d /root/ROCKY/conf.d
-ln -s /etc/my.cnf /root/ROCKY/my.cnf
-ln -s /etc/php.ini /root/ROCKY/php/php.ini
-ln -s /etc/opt/remi/php72/php.ini /root/ROCKY/php/php72.ini
-ln -s /etc/opt/remi/php73/php.ini /root/ROCKY/php/php73.ini
-ln -s /etc/opt/remi/php74/php.ini /root/ROCKY/php/php74.ini
-ln -s /etc/opt/remi/php80/php.ini /root/ROCKY/php/php80.ini
-ln -s /etc/opt/remi/php81/php.ini /root/ROCKY/php/php81.ini
+ln -s /etc/httpd/conf.d /root/ROCKYM/conf.d
+ln -s /etc/my.cnf /root/ROCKYM/my.cnf
+ln -s /etc/php.ini /root/ROCKYM/php/php.ini
+ln -s /etc/opt/remi/php72/php.ini /root/ROCKYM/php/php72.ini
+ln -s /etc/opt/remi/php73/php.ini /root/ROCKYM/php/php73.ini
+ln -s /etc/opt/remi/php74/php.ini /root/ROCKYM/php/php74.ini
+ln -s /etc/opt/remi/php80/php.ini /root/ROCKYM/php/php80.ini
+ln -s /etc/opt/remi/php81/php.ini /root/ROCKYM/php/php81.ini
 
 service httpd restart
 
-cd /root/ROCKY
+cd /root/ROCKYM
 
 ##########################################
 #                                        #

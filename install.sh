@@ -30,19 +30,19 @@ fi
 echo""
 echo "설치를 시작 합니다."
 
-cd /root/ROCKY/APM
+cd /root/ROCKYM/APM
 
 chmod 700 APMinstaller.sh
 
-chmod 700 /root/ROCKY/adduser.sh
+chmod 700 /root/ROCKYM/adduser.sh
 
-chmod 700 /root/ROCKY/deluser.sh
+chmod 700 /root/ROCKYM/deluser.sh
 
-chmod 700 /root/ROCKY/restart.sh
+chmod 700 /root/ROCKYM/restart.sh
 
 sh APMinstaller.sh
 
-cd /root/ROCKY
+cd /root/ROCKYM
 
 echo ""
 echo ""
@@ -70,7 +70,7 @@ fi
 
 echo""
 echo "phpMyAdmin 설치를 시작 합니다."
-cd /root/ROCKY/APM
+cd /root/ROCKYM/APM
 
 chmod 700 phpMyAdmin.sh
 
@@ -84,9 +84,9 @@ echo ""
 echo ""
 
 #설치 파일 삭제
-rm -rf /root/ROCKY/APM
+rm -rf /root/ROCKYM/APM
 echo ""
-rm -rf /root/ROCKY/install.sh
+rm -rf /root/ROCKYM/install.sh
 echo ""
 exit;
 
